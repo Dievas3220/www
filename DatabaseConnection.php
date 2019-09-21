@@ -12,9 +12,10 @@ class DatabaseConnection
 
         if ($conn->connect_error) {
             die("Connection failed: " . $conn->connect_error);
-
         }
 
+        $sql = "USE doctor";
+        $conn->query($sql);
         return $conn;
     }
 }
