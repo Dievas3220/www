@@ -1,7 +1,7 @@
 <?php
 require('DatabaseConnection.php');
 
-$databaseConnection= new DatabaseConnection();
+$databaseConnection = new DatabaseConnection();
 $conn = $databaseConnection->connect();
 
 $sql = "USE doctor";
