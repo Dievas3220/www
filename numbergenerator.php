@@ -3,8 +3,8 @@ require('DatabaseConnection.php');
 
 $databaseConnection = new DatabaseConnection();
 $conn = $databaseConnection->connect();
-$doctor = $_GET["doctor"];
-$name = $_GET["firstname"];
+$doctor = $_GET["doctorId"];
+$name = $_GET["clientName"];
 
 $sql = "INSERT INTO client (`name`, `doctor_id`, `status`) VALUES ('" . $name . "','" . $doctor . "', 'to do')";
 include 'links.php';
