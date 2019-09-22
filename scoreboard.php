@@ -1,6 +1,7 @@
 <?php
 
 require('DatabaseConnection.php');
+require('Doctors.php');
 
 $databaseConnection = new DatabaseConnection();
 $conn = $databaseConnection->connect();
@@ -16,9 +17,10 @@ echo
     <title>Svieslente</title>
 </head>
 <body>";
+$doctors = new Doctors();
 if ($result->num_rows > 0) {
     while ($row = $result->fetch_assoc()) {
-        echo $row["ID"] . "<br>";
+        echo $row["id"] . " " . $doctors->getDoctorById($row['doctor_id']) . "<br>";
     }
 } else {
     echo "0 results";
