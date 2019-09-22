@@ -6,7 +6,7 @@ $conn = $databaseConnection->connect();
 
 $sql = "USE doctor";
 $conn->query($sql);
-$sql = "SELECT * FROM client WHERE STATUS = 'TO DO'";
+$sql = "SELECT * FROM client WHERE status = 'TO DO'";
 $result = $conn->query($sql);
 if ($result->num_rows > 0) {
     while ($row = $result->fetch_assoc()) {
