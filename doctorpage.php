@@ -1,5 +1,6 @@
 <?php
 require('DatabaseConnection.php');
+require('Doctors.php');
 
 $databaseConnection = new DatabaseConnection();
 $conn = $databaseConnection->connect();
@@ -19,15 +20,13 @@ echo
 <body>";
 
 if (empty($doctorId)) {
-    echo
-    "<form action='doctorpage.php'>
-    <input type='radio' name='doctorId' value='1'> Dr. Vytas<br>
-    <input type='radio' name='doctorId' value='2'> Dr. Ona<br>
-    <input type='radio' name='doctorId' value='3'> Dr. Kazys<br>
-    <input type='submit' value='Submit' method='get'>
-
-</form>
-";
+    $doctors = new Doctors();
+    echo "<form action='doctorpage.php'>";
+    foreach ($doctors->getDoctors() as $doctorId =>$doctor) {
+        echo "<input type='radio' name='doctorId' value=$doctorId> $doctor <br>";
+    }
+    echo "<input type='submit' value='Submit' method='get'>
+   </form>";
 } else {
     if ($result->num_rows > 0) {
         while ($row = $result->fetch_assoc()) {
@@ -37,7 +36,7 @@ if (empty($doctorId)) {
         echo "0 results";
     }
     echo "<form action='doctorchooseclient.php'>
-   Kviesti pacienta ID:<br>
+    Kviesti pacientą nr:<br>
     <input type='text' name='client'><br>
     <input type='submit' value='Submit' method='get'>
 </form>
