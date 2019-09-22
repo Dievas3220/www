@@ -18,7 +18,7 @@ echo
     <title>Daktaro puslapis</title>
 </head>
 <body>";
-
+include 'links.php';
 if (empty($doctorId)) {
     $doctors = new Doctors();
     echo "<form action='doctorpage.php'>";
