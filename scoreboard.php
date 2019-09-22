@@ -17,6 +17,7 @@ echo
     <title>Svieslente</title>
 </head>
 <body>";
+include 'links.php';
 $doctors = new Doctors();
 if ($result->num_rows > 0) {
     while ($row = $result->fetch_assoc()) {
