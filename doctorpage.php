@@ -38,6 +38,7 @@ if (empty($doctorId)) {
     echo "<form action='doctorchooseclient.php'>
     Kviesti pacientą nr:<br>
     <input type='text' name='client'><br>
+    <input type='hidden' name='doctorId' value=" . $doctorId . "><br>
     <input type='submit' value='Submit' method='get'>
 </form>
 </body>
