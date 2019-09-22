@@ -4,8 +4,6 @@ require('DatabaseConnection.php');
 $databaseConnection = new DatabaseConnection();
 $conn = $databaseConnection->connect();
 
-$sql = "USE doctor";
-$conn->query($sql);
 $sql = "SELECT * FROM client WHERE status = 'TO DO'";
 $result = $conn->query($sql);
 if ($result->num_rows > 0) {
