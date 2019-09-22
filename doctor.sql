@@ -11,20 +11,14 @@
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 
-
--- Dumping database structure for doctor
-CREATE DATABASE IF NOT EXISTS `doctor` /*!40100 DEFAULT CHARACTER SET cp1257 COLLATE cp1257_lithuanian_ci */;
-USE `doctor`;
-
 -- Dumping structure for table doctor.client
 CREATE TABLE IF NOT EXISTS `client` (
-  `ID` smallint(6) NOT NULL AUTO_INCREMENT,
+  `id` smallint(6) NOT NULL AUTO_INCREMENT,
   `name` varchar(50) COLLATE cp1257_lithuanian_ci DEFAULT NULL,
-  `DoctorID` smallint(6) DEFAULT NULL,
-  `Status` smallint(6) DEFAULT NULL,
-  `Timestamp` timestamp NULL DEFAULT NULL,
-  KEY `Index 1` (`ID`)
-) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=cp1257 COLLATE=cp1257_lithuanian_ci;
+  `doctor_id` smallint(6) DEFAULT NULL,
+  `status` varchar(50) COLLATE cp1257_lithuanian_ci DEFAULT NULL,
+  KEY `Index 1` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=41 DEFAULT CHARSET=cp1257 COLLATE=cp1257_lithuanian_ci;
 
 -- Data exporting was unselected.
 
