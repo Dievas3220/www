@@ -5,6 +5,7 @@ class DatabaseConnection
     private $servername = "localhost";
     private $username = "root";
     private $password = "mysql";
+    private $database = "doctor";
 
     public function connect()
     {
@@ -14,7 +15,7 @@ class DatabaseConnection
             die("Connection failed: " . $conn->connect_error);
         }
 
-        $sql = "USE doctor";
+        $sql = "USE " . $this->database;
         $conn->query($sql);
         return $conn;
     }
