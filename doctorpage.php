@@ -30,7 +30,7 @@ if (empty($doctorId)) {
 } else {
     if ($result->num_rows > 0) {
         while ($row = $result->fetch_assoc()) {
-            echo $row["id"] . " " . $row["name"] . "<br>";
+            echo $row["id"] . " " . htmlspecialchars($row["name"]) . "<br>";
         }
     } else {
         echo "0 results";
