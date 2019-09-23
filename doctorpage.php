@@ -44,3 +44,4 @@ if (empty($doctorId)) {
 </body>
 </html>";
 }
+

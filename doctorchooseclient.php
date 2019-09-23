@@ -11,3 +11,4 @@ $result = $conn->query($sql);
 $sql = "UPDATE client SET status = 'In progress' WHERE id = " . $clientId;
 $result = $conn->query($sql);
 $conn->close();
+
